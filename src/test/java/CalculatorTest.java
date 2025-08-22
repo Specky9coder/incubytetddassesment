@@ -79,6 +79,12 @@ public class CalculatorTest {
         assertEquals(2, calc.add("2,1001"));
     }
 
+    @Test
+    void shouldSupportLongDelimiter() {
+        Calculator calc = new Calculator();
+        assertEquals(6, calc.add("//[***]\n1***2***3"));
+    }
+
 
     @Test
     void testGetCalledCount() {
