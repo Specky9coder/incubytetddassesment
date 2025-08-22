@@ -64,6 +64,15 @@ public class CalculatorTest {
         assertEquals("negatives not allowed: [-2]", ex.getMessage());
     }
 
+    @Test
+    void shouldThrowExceptionForMultipleNegatives() {
+        Calculator calc = new Calculator();
+        IllegalArgumentException ex =
+                assertThrows(IllegalArgumentException.class, () -> calc.add("-1,-2,3"));
+        assertEquals("negatives not allowed: [-1, -2]", ex.getMessage());
+    }
+
+
 
     @Test
     void testGetCalledCount() {
