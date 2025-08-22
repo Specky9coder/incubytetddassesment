@@ -42,4 +42,18 @@ public class CalculatorTest {
         assertEquals(6, calc.add("1\n2,3"));
     }
 
+
+
+    @Test
+    void testGetCalledCount() {
+        Calculator calc = new Calculator();
+
+        assertEquals(0, calc.getCalledCount()); // initially zero
+
+        calc.add("1,2");
+        calc.add("3");
+
+        assertEquals(2, calc.getCalledCount()); // should be 2 after two calls
+    }
+
 }
