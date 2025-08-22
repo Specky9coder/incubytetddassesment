@@ -11,4 +11,10 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(0, calc.add(""));
     }
+
+    @Test
+    void shouldReturnNumberForNumber() {
+        Calculator calc = new Calculator();
+        assertEquals(1, calc.add("1"));
+    }
 }
