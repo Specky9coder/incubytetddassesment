@@ -17,4 +17,10 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(1, calc.add("1"));
     }
+
+    @Test
+    void shouldReturnSameNumberForSingleNumber() {
+        Calculator calc = new Calculator();
+        assertEquals(7, calc.add("7"));
+    }
 }
