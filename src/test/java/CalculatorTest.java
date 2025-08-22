@@ -48,6 +48,12 @@ public class CalculatorTest {
         assertEquals(3, calc.add("//;\n1;2"));
     }
 
+    @Test
+    void shouldSupportMultipleDelimitersOfAnyLength() {
+        Calculator calc = new Calculator();
+        assertEquals(6, calc.add("//[**][%%]\n1**2%%3"));
+    }
+
 
     @Test
     void testGetCalledCount() {
