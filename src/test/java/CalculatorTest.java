@@ -23,4 +23,10 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(7, calc.add("7"));
     }
+
+    @Test
+    void shouldSumTwoNumbers() {
+        Calculator calc = new Calculator();
+        assertEquals(3, calc.add("1,2"));
+    }
 }
