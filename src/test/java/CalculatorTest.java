@@ -29,4 +29,10 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(3, calc.add("1,2"));
     }
+
+    @Test
+    void shouldSumUnknownAmountOfNumbers() {
+        Calculator calc = new Calculator();
+        assertEquals(10, calc.add("1,2,3,4"));
+    }
 }
