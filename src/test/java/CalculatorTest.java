@@ -73,6 +73,12 @@ public class CalculatorTest {
     }
 
 
+    @Test
+    void shouldIgnoreNumbersBiggerThan1000() {
+        Calculator calc = new Calculator();
+        assertEquals(2, calc.add("2,1001"));
+    }
+
 
     @Test
     void testGetCalledCount() {
