@@ -2,6 +2,7 @@ import com.incubyte.Calculator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
@@ -52,6 +53,15 @@ public class CalculatorTest {
     void shouldSupportMultipleDelimitersOfAnyLength() {
         Calculator calc = new Calculator();
         assertEquals(6, calc.add("//[**][%%]\n1**2%%3"));
+    }
+
+
+    @Test
+    void shouldThrowExceptionForNegativeNumber() {
+        Calculator calc = new Calculator();
+        IllegalArgumentException ex =
+                assertThrows(IllegalArgumentException.class, () -> calc.add("1,-2,3"));
+        assertEquals("negatives not allowed: [-2]", ex.getMessage());
     }
 
 
